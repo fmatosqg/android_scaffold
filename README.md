@@ -3,14 +3,14 @@
 - Configure the flavor to cloudDebug for using internet with real data
 
 # Running UI tests with Espresso
-Running UI tests with only the mock flavor will ensure consistent results even. Plus, you don't need the server to be online ;)
+Running UI tests with only the mock flavor will ensure consistent. Plus, you don't need the server to be online ;)
 
 `./gradlew connectedMockDebugAndroidTest`
 
 # Architecture
 ## Flavors
 - There is a flavor dimension "api", with the possible values being mock, cloud. 
-- The mock flavor is especially useful since it feeds the UI with static preconfigured data, which allows the developer to exercise the UI with all the edge cases. If espresso is also supported it's the recommended flavor, because of its predictability.
+- The mock flavor is especially useful since it feeds the UI with static preconfigured data during development time even if TDD is not followed, which allows the developer to exercise the UI with all the edge cases. If espresso is also supported it's the recommended flavor, because of its predictability.
 - The cloud flavor means that data will be obtained using Retrofit from somewhere in the cloud.
 
 
