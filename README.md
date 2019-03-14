@@ -1,6 +1,6 @@
 # Setup
-Configure the flavor to mockDebug for development
-Configure the flavor to cloudDebug for using internet with real data
+- Configure the flavor to mockDebug for development
+- Configure the flavor to cloudDebug for using internet with real data
 
 # Running UI tests with Espresso
 Running UI tests with only the mock flavor will ensure consistent results even. Plus, you don't need the server to be online ;)
@@ -17,6 +17,7 @@ Running UI tests with only the mock flavor will ensure consistent results even. 
 ## Java packages convention
 - This app is packaged by feature. What it means is that if it has a feature called login and another called list the following tree is expected:
 
+```
 ui
  | 
  \ login
@@ -26,6 +27,7 @@ domain
  \ login
  \ list 
 utils 
+```
 
 Which is an advantage once the app has over 20 activities and presenters.
 
