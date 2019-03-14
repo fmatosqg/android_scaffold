@@ -4,14 +4,51 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/background_grey</item>
+
+
+        <!-- status bar -->
+        <item name="colorPrimaryDark">#000000</item>
+
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+    <!--Text styling-->
+    <style name="AppTheme.Text" />
+
+    <style name="AppTheme.Text.Header">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/text_header</item>
+        <item name="android:fontFamily">serif</item>
+    </style>
+
+    <style name="AppTheme.Text.Title">
+        <item name="android:textColor">@color/text_title</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">serif</item>
+    </style>
+
+    <style name="AppTheme.Text.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/text_caption</item>
+    </style>
+
+    <style name="AppTheme.Text.Caption.Bold">
+        <item name="android:fontFamily">sans-serif-medium</item>
+
+    </style>
 
 </resources>

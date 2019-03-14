@@ -1,3 +1,13 @@
 <resources>
 
+
+    <!--App wide settings-->
+    <dimen name="padding_zero">0dp</dimen>
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="padding_iffy">8dp</dimen>
+    <dimen name="padding_small">12dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+
 </resources>

@@ -3,12 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_normal"
     android:orientation="vertical">
+
+
+    <TextView
+        style="@style/AppTheme.Text.Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Header"
+        tools:text="Hello item" />
 
     <TextView
         android:id="@+id/kitty_name"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        style="@style/AppTheme.Text.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         tools:text="Hello item" />
+
+
+    <TextView
+        style="@style/AppTheme.Text.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Caption"
+        tools:text="Hello item" />
+
+
+
+    <TextView
+        style="@style/AppTheme.Text.Caption.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello Caption Bold"
+        tools:text="Hello item" />
+
 
 </LinearLayout>

@@ -3,4 +3,13 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="background_grey">#eeeeee</color>
+
+    <!--Typography-->
+    <color name="text_header">#004422</color>
+    <color name="text_title">#002211</color>
+    <color name="text_caption">#226644</color>
+
+
 </resources>
