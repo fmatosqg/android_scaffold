@@ -2,6 +2,10 @@
 Configure the flavor to mockDebug for development
 Configure the flavor to cloudDebug for using internet with real data
 
+# Running UI tests with Espresso
+Running UI tests with only the mock flavor will ensure consistent results even. Plus, you don't need the server to be online ;)
+
+`./gradlew connectedMockDebugAndroidTest`
 
 # Architecture
 ## Flavors

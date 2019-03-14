@@ -2,11 +2,12 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
 
     <data>
 
+        <!--view model to be used on the main contents of the app -->
         <variable
             name="viewModel"
             type="net.amazingdomain.sample.myapplication.ui.landing.LandingViewModel" />
@@ -18,6 +19,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.landing.LandingActivity">
 
+        <!--toolbar / hero-->
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,25 +34,10 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".ui.landing.LandingActivity"
-            tools:showIn="@layout/activity_main">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={viewModel.kittyName}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Hello World!" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <!--if you like fragments replace this with a FrameLayout and add your fragment here-->
+        <include
+            layout="@layout/content_main"
+            bind:viewModel="@{viewModel}" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

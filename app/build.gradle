@@ -77,12 +77,15 @@ dependencies {
 
     ////////////////////////////////////////////////////
     // test
+
+    // 1st party libs
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation "androidx.test:runner:$instrumentedTestVersion"
+    androidTestImplementation "androidx.test:rules:$instrumentedTestVersion"
+    androidTestImplementation "androidx.test.ext:junit:$instrumentedTestVersion"
 
     // for live data
     testImplementation "androidx.arch.core:core-testing:$lifecycleVersion"
-
 
 }
