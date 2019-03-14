@@ -16,12 +16,12 @@ class KoinModules {
     private constructor()
 
     val uiModule = module {
-        viewModel { LandingViewModel() }
+        viewModel { LandingViewModel(get()) }
     }
 
     val domainModule = module {
 
-        single { DataRepository() }
+        factory { DataRepository() }
     }
 
 

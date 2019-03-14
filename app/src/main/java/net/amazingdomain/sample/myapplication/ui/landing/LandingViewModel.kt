@@ -2,21 +2,19 @@ package net.amazingdomain.sample.myapplication.ui.landing
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import net.amazingdomain.sample.myapplication.domain.landing.DataRepository
 
-class LandingViewModel : ViewModel() {
+class LandingViewModel(private val dataRepository: DataRepository) : ViewModel() {
 
 
     val kittyName = MutableLiveData<String>()
 
     val listData = MutableLiveData<List<String>>()
 
-    init {
-        fetchData()
-    }
 
-    private fun fetchData() {
+    fun fetchData() {
         kittyName.postValue("name kitty")
-        listData.postValue(listOf("a", "b"))
+        listData.postValue(dataRepository.fetchData())
     }
 
 }

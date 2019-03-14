@@ -1,5 +1,6 @@
 package net.amazingdomain.sample.myapplication.domain.landing
 
-class DataRepository() {
+interface IDataRepository {
+    fun fetchData(): List<String>
 
 }
