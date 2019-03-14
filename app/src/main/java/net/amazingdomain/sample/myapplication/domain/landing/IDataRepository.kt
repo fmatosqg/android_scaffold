@@ -1,6 +1,8 @@
 package net.amazingdomain.sample.myapplication.domain.landing
 
+import io.reactivex.Single
+
 interface IDataRepository {
-    fun fetchData(): List<String>
+    fun fetchData(): Single<List<String>>
 
 }

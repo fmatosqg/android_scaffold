@@ -1,10 +1,15 @@
 package net.amazingdomain.sample.myapplication.domain.landing
 
-class DataRepository : IDataRepository {
+import io.reactivex.Single
+import net.amazingdomain.sample.myapplication.domain.landing.api.ApiService
 
-    override fun fetchData(): List<String> {
+class DataRepository(private val apiService: ApiService) : IDataRepository {
 
-        TODO("Not implemented yet")
+    override fun fetchData(): Single<List<String>> {
+
+        return apiService
+                .getData("fmatosqg")
+                .map { listOf(it.login, it.url) }
     }
 
 }

@@ -29,7 +29,6 @@ class LandingActivity : AppCompatActivity() {
         viewModel.fetchData()
 
         swipe.setOnRefreshListener {
-            swipe.isRefreshing = false
             viewModel.fetchData()
         }
 

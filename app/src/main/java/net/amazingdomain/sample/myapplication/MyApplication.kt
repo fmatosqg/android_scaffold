@@ -12,9 +12,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        with(KoinModules.getInstance()) {
-            startKoin(this@MyApplication, listOf(uiModule, domainModule))
-        }
+        startKoin(this, KoinModules.getInstance().getAllModules())
 
         if (BuildConfig.DEBUG) {
             configureStrictMode()

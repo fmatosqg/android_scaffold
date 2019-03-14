@@ -1,11 +1,16 @@
 package net.amazingdomain.sample.myapplication.domain.landing
 
-class DataRepository : IDataRepository {
+import androidx.annotation.AnyThread
+import io.reactivex.Single
+import net.amazingdomain.sample.myapplication.domain.landing.api.ApiService
+import java.util.concurrent.TimeUnit
+
+class DataRepository(private val apiService: ApiService) : IDataRepository {
 
     private var size = 5
 
-    override fun fetchData(): List<String> {
-
+    @AnyThread
+    override fun fetchData(): Single<List<String>> {
 
         val list = mutableListOf<String>()
 
@@ -14,7 +19,11 @@ class DataRepository : IDataRepository {
         }
 
         size++
-        return list
+
+        return Single.just(list as List<String>)
+                .delay(3, TimeUnit.SECONDS)
+
+
     }
 
 }

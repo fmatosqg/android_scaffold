@@ -29,3 +29,9 @@ utils
 
 Which is an advantage once the app has over 20 activities and presenters.
 
+
+
+# TODO
+- Configure retrofit interceptor to inspect network traffic in debug mode
+- Check that Koin is not producing too much logs in release mode
+- Proguard, R8, D8 not configured
