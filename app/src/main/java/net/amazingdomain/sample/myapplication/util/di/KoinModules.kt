@@ -5,11 +5,11 @@ import net.amazingdomain.sample.myapplication.ui.landing.LandingViewModel
 import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
-class KoinSetup {
+class KoinModules {
 
     companion object {
-        fun getInstance(): KoinSetup {
-            return KoinSetup()
+        fun getInstance(): KoinModules {
+            return KoinModules()
         }
     }
 

@@ -3,7 +3,7 @@ package net.amazingdomain.sample.myapplication
 import android.app.Application
 import android.os.Build
 import android.os.StrictMode
-import net.amazingdomain.sample.myapplication.util.di.KoinSetup
+import net.amazingdomain.sample.myapplication.util.di.KoinModules
 import org.koin.android.ext.android.startKoin
 
 
@@ -12,7 +12,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        with(KoinSetup.getInstance()) {
+        with(KoinModules.getInstance()) {
             startKoin(this@MyApplication, listOf(uiModule, domainModule))
         }
 
