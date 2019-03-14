@@ -25,6 +25,9 @@ class LandingActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
+        swipe.setOnRefreshListener {
+            swipe.isRefreshing = false
+        }
         setupRecyclerView()
 
     }
