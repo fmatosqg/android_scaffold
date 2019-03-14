@@ -1,4 +1,4 @@
-package net.amazingdomain.sample.myapplication
+package net.amazingdomain.sample.myapplication.ui.landing
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -7,8 +7,9 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
+import net.amazingdomain.sample.myapplication.R
 
-class MainActivity : AppCompatActivity() {
+class LandingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
