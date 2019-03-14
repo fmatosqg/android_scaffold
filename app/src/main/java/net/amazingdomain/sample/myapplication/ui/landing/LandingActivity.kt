@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.landing_toolbar.*
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.databinding.ActivityMainBinding
 
