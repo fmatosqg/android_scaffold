@@ -13,51 +13,28 @@
 
 
     <FrameLayout
-        android:id="@+id/landing_frag_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.core.widget.NestedScrollView
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:fastScrollEnabled="true"
+                app:fastScrollHorizontalThumbDrawable="@drawable/recycler_fast_scroll_thumb_drawable"
+                app:fastScrollHorizontalTrackDrawable="@drawable/recycler_fast_scroll_line_drawable"
+                app:fastScrollVerticalThumbDrawable="@drawable/recycler_fast_scroll_thumb_drawable"
+                app:fastScrollVerticalTrackDrawable="@drawable/recycler_fast_scroll_line_drawable"
+                tools:listitem="@layout/list_item" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@={viewModel.kittyName}"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Hello World!" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="#12f" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="#123" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="#12f" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="#123" />
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
     </FrameLayout>
 </layout>

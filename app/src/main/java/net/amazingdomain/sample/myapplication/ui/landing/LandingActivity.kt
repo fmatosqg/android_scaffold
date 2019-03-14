@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.landing_toolbar.*
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.databinding.ActivityMainBinding
@@ -23,7 +25,16 @@ class LandingActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
+        setupRecyclerView()
+
+    }
+
+    private fun setupRecyclerView() {
+
+        recycler_view.layoutManager = LinearLayoutManager(this)
+        recycler_view.adapter = ListItemAdapter()
     }
 
 
 }
+
