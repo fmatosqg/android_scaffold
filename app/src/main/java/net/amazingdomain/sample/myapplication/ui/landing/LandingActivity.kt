@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.landing_toolbar.*
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.databinding.ActivityMainBinding
+import net.amazingdomain.sample.myapplication.ui.landing.list.ListItemAdapter
 import org.koin.android.ext.android.inject
 
 

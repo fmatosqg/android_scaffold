@@ -1,42 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/padding_normal"
-    android:orientation="vertical">
 
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        style="@style/AppTheme.Text.Header"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="net.amazingdomain.sample.myapplication.ui.landing.list.ItemViewModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Header"
-        tools:text="Hello item" />
-
-    <TextView
-        android:id="@+id/kitty_name"
-        style="@style/AppTheme.Text.Title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Hello item" />
+        android:layout_margin="@dimen/padding_normal"
+        android:orientation="vertical">
 
 
-    <TextView
-        style="@style/AppTheme.Text.Caption"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello Caption"
-        tools:text="Hello item" />
+        <TextView
+            style="@style/AppTheme.Text.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.header}"
+            tools:text="Hello item" />
+
+        <TextView
+            android:id="@+id/kitty_name"
+            style="@style/AppTheme.Text.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.name}"
+            tools:text="Hello item" />
 
 
+        <TextView
+            style="@style/AppTheme.Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.caption}"
+            tools:text="Hello item" />
 
-    <TextView
-        style="@style/AppTheme.Text.Caption.Bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello Caption Bold"
-        tools:text="Hello item" />
+
+        <TextView
+            style="@style/AppTheme.Text.Caption.Bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.captionBold}"
+            tools:text="Hello item" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

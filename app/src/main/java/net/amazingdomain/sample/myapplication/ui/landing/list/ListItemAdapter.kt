@@ -1,29 +1,35 @@
-package net.amazingdomain.sample.myapplication.ui.landing
+package net.amazingdomain.sample.myapplication.ui.landing.list
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.annotation.UiThread
 import androidx.databinding.BindingAdapter
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import net.amazingdomain.sample.myapplication.R
+import net.amazingdomain.sample.myapplication.databinding.ListItemBinding
+import net.amazingdomain.sample.myapplication.ui.common.list.ItemViewHolder
 
-class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
+class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
 
     private var listData: List<String>
 
     init {
-        listData = listOf<String>()
+        listData = listOf()
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
-        return LayoutInflater.from(parent.context)
-                .inflate(R.layout.list_item, parent, false)
-                .let { ItemViewHolder(it) }
+        val binding: ListItemBinding =
+                DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+                        R.layout.list_item, parent, false)
 
+
+        val viewHolder = ItemViewHolder(binding)
+        binding.lifecycleOwner = viewHolder
+
+        return viewHolder
     }
 
     override fun getItemCount(): Int {
@@ -44,6 +50,18 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
 
     }
 
+    override fun onViewAttachedToWindow(holder: ItemViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        holder.markAttach()
+
+    }
+
+    override fun onViewDetachedFromWindow(holder: ItemViewHolder) {
+        super.onViewDetachedFromWindow(holder)
+
+        holder.markDetach()
+    }
+
     @UiThread
     fun setData(itemsList: List<String>?) {
 
@@ -52,17 +70,8 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
     }
 
 
-    class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        private val kittyName: TextView = itemView.findViewById(R.id.kitty_name)
-
-        fun setData(name: String) {
-
-            kittyName.text = name
-
-        }
-    }
 }
+
 
 /**
  * Referenced as "app:listData" in layout;
