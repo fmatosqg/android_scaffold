@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import net.amazingdomain.sample.myapplication.domain.landing.DataRepository
 import net.amazingdomain.sample.myapplication.domain.landing.api.ApiService
 import net.amazingdomain.sample.myapplication.ui.landing.LandingViewModel
+import net.amazingdomain.sample.myapplication.ui.landing.list.ItemViewModel
 import okhttp3.OkHttpClient
 import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.Module

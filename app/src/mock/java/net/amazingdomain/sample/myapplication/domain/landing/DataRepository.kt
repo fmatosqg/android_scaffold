@@ -21,7 +21,7 @@ class DataRepository(private val apiService: ApiService) : IDataRepository {
         size++
 
         return Single.just(list as List<String>)
-                .delay(3, TimeUnit.SECONDS)
+                .delay(200, TimeUnit.MILLISECONDS)
 
 
     }
