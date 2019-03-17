@@ -1,4 +1,4 @@
-package net.amazingdomain.sample.myapplication.ui.landing.list
+package net.amazingdomain.sample.myapplication.ui.common.list
 
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Lifecycle

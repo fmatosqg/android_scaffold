@@ -1,8 +1,7 @@
-package net.amazingdomain.sample.myapplication.ui.common.list
+package net.amazingdomain.sample.myapplication.ui.landing.list
 
 import net.amazingdomain.sample.myapplication.databinding.ListItemBinding
-import net.amazingdomain.sample.myapplication.ui.landing.list.BaseViewHolder
-import net.amazingdomain.sample.myapplication.ui.landing.list.ItemViewModel
+import net.amazingdomain.sample.myapplication.ui.common.list.BaseViewHolder
 
 class ItemViewHolder(private val itemViewBinding: ListItemBinding) : BaseViewHolder(itemViewBinding) {
 

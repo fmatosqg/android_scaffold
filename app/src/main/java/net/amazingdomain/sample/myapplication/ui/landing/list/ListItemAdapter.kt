@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.databinding.ListItemBinding
-import net.amazingdomain.sample.myapplication.ui.common.list.ItemViewHolder
+import net.amazingdomain.sample.myapplication.ui.common.list.BaseListAdapter
 
-class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
+class ListItemAdapter : BaseListAdapter() {
 
     private var listData: List<String>
 
@@ -50,17 +50,6 @@ class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
 
     }
 
-    override fun onViewAttachedToWindow(holder: ItemViewHolder) {
-        super.onViewAttachedToWindow(holder)
-        holder.markAttach()
-
-    }
-
-    override fun onViewDetachedFromWindow(holder: ItemViewHolder) {
-        super.onViewDetachedFromWindow(holder)
-
-        holder.markDetach()
-    }
 
     @UiThread
     fun setData(itemsList: List<String>?) {
