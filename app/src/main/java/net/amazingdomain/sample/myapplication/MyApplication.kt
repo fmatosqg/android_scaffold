@@ -5,6 +5,8 @@ import android.os.Build
 import android.os.StrictMode
 import net.amazingdomain.sample.myapplication.util.di.KoinModules
 import org.koin.android.ext.android.startKoin
+import org.koin.android.logger.AndroidLogger
+import org.koin.log.EmptyLogger
 
 
 class MyApplication : Application() {
@@ -12,7 +14,15 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        startKoin(this, KoinModules.getInstance().getAllModules())
+        val logger = if (BuildConfig.DEBUG) {
+            AndroidLogger()
+        } else {
+            EmptyLogger()
+        }
+
+        startKoin(androidContext = this,
+                modules = KoinModules.getInstance().getAllModules(),
+                logger = logger)
 
         if (BuildConfig.DEBUG) {
             configureStrictMode()
