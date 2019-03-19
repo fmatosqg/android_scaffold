@@ -8,13 +8,14 @@ import androidx.annotation.UiThread
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import net.amazingdomain.sample.myapplication.R
+import net.amazingdomain.sample.myapplication.ui.landing.model.AlbumUiModel
 
 class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
 
-    private var listData: List<String>
+    private var listData: List<AlbumUiModel>
 
     init {
-        listData = listOf<String>()
+        listData = listOf()
     }
 
 
@@ -37,7 +38,7 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
                     if (position < it.size) {
                         it[position]
                     } else {
-                        ""
+                        null
                     }
                 }
                 .let { holder.setData(it) }
@@ -45,7 +46,7 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
     }
 
     @UiThread
-    fun setData(itemsList: List<String>?) {
+    fun setData(itemsList: List<AlbumUiModel>?) {
 
         this.listData = itemsList ?: listOf()
         notifyDataSetChanged()
@@ -56,9 +57,9 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
 
         private val kittyName: TextView = itemView.findViewById(R.id.kitty_name)
 
-        fun setData(name: String) {
+        fun setData(album: AlbumUiModel?) {
 
-            kittyName.text = name
+            kittyName.text = album?.niceName
 
         }
     }
@@ -69,7 +70,7 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
  * Called through the data binding generated code.
  */
 @BindingAdapter("listData")
-fun setRecyclerViewProperties(recyclerView: RecyclerView?, listData: List<String>?) {
+fun setRecyclerViewProperties(recyclerView: RecyclerView?, listData: List<AlbumUiModel>?) {
 
     with(recyclerView?.adapter) {
         if (this is ListItemAdapter) {

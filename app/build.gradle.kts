@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.dsl.SigningConfig
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
 plugins {
@@ -27,6 +28,9 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+
+            // TODO replace by proper key signing for official releases
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 

@@ -1,12 +1,12 @@
 package net.amazingdomain.sample.myapplication.domain.landing.api
 
 import io.reactivex.Single
+import net.amazingdomain.sample.myapplication.domain.landing.model.Album
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiService {
-    @GET("/users/{user}")
-    fun getData(@Path("user") user: String): Single<User>
+    @GET("/albums/")
+    fun getData(): Single<List<Album>>
 }
 
-data class User(val id: Int, val url: String, val login: String)

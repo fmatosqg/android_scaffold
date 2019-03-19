@@ -2,14 +2,17 @@ package net.amazingdomain.sample.myapplication.domain.landing
 
 import io.reactivex.Single
 import net.amazingdomain.sample.myapplication.domain.landing.api.ApiService
+import net.amazingdomain.sample.myapplication.domain.landing.model.Album
 
 class DataRepository(private val apiService: ApiService) : IDataRepository {
 
-    override fun fetchData(): Single<List<String>> {
+    override fun fetchData(): Single<List<Album>> {
 
         return apiService
-                .getData("fmatosqg")
-                .map { listOf(it.login, it.url) }
+                .getData()
+
     }
 
 }
+
+

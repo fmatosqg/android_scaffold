@@ -38,3 +38,5 @@ Which is an advantage once the app has over 20 activities and presenters.
 # TODO
 - Configure retrofit interceptor to inspect network traffic in debug mode
 - Proguard, R8, D8 not configured
+- For release builds, configure cleartext as allowed 
+- For release builds, set up signing key properly
