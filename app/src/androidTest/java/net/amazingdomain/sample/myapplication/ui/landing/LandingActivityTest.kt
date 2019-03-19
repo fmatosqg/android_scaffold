@@ -55,7 +55,7 @@ class LandingActivityTest : BaseActivityTest() {
 
         onView(withId(R.id.recycler_view))
                 .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(position))
-                .check(matches(atPosition(position, hasDescendant(withText("Kitty # $position")))))
+                .check(matches(atPosition(position, hasDescendant(withText("Kitty #$position")))))
 
     }
 }
