@@ -1,6 +1,7 @@
 package net.amazingdomain.sample.myapplication.util.di
 
 import com.google.gson.Gson
+import net.amazingdomain.sample.myapplication.BuildConfig
 import net.amazingdomain.sample.myapplication.domain.landing.DataRepository
 import net.amazingdomain.sample.myapplication.domain.landing.api.ApiService
 import net.amazingdomain.sample.myapplication.ui.landing.LandingViewModel
@@ -44,7 +45,7 @@ class KoinModules {
         factory { OkHttpClient.Builder().build() }
         factory {
             val retrofit = Retrofit.Builder()
-                    .baseUrl("https://api.github.com/")
+                    .baseUrl(BuildConfig.SERVER_URL)
                     .addConverterFactory(GsonConverterFactory.create(get()))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(get())

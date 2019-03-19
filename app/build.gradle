@@ -34,6 +34,7 @@ android {
         }
         cloud {
             dimension "api"
+            buildConfigField "String", "SERVER_URL", "\"$serverUrl\""
         }
     }
 
