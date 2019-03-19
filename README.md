@@ -13,6 +13,8 @@ Running UI tests with only the mock flavor will ensure consistent. Plus, you don
 - The mock flavor is especially useful since it feeds the UI with static preconfigured data during development time even if TDD is not followed, which allows the developer to exercise the UI with all the edge cases. If espresso is also supported it's the recommended flavor, because of its predictability.
 - The cloud flavor means that data will be obtained using Retrofit from somewhere in the cloud.
 
+### Flavor configuration
+Environment variables such as server url are configured through `buildSrc/src/main/kotlin/Environment.kt`
 
 ## Java packages convention
 - This app is packaged by feature. What it means is that if it has a feature called login and another called list the following tree is expected:
