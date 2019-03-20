@@ -15,10 +15,10 @@ class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val txtName: TextView = itemView.findViewById(R.id.txt_name)
     private val imgAvatar: ImageView = itemView.findViewById(R.id.img_avatar)
 
-    fun setData(album: AlbumUiModel?) {
+    fun setData(album: AlbumUiModel) {
 
-        txtName.text = album?.niceName
-        setImage(imageUrl = album?.thumbnail ?: "",
+        txtName.text = album.niceName
+        setImage(imageUrl = album.thumbnail,
                 placeholderRes = R.mipmap.ic_launcher,
                 imageView = imgAvatar)
     }

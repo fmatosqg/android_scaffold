@@ -32,21 +32,15 @@ class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         listData
-                .let {
-                    if (position < it.size) {
-                        it[position]
-                    } else {
-                        null
-                    }
-                }
+                .let { listData[position] }
                 .let { holder.setData(it) }
 
     }
 
     @UiThread
-    fun setData(itemsList: List<AlbumUiModel>?) {
+    fun setData(itemsList: List<AlbumUiModel>) {
 
-        this.listData = itemsList ?: listOf()
+        this.listData = itemsList
         notifyDataSetChanged()
     }
 
@@ -60,9 +54,11 @@ class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
 @BindingAdapter("listData")
 fun setRecyclerViewProperties(recyclerView: RecyclerView?, listData: List<AlbumUiModel>?) {
 
+    // note that we need to accept an empty listData because of an interesting quirk in live data
+
     with(recyclerView?.adapter) {
         if (this is ListItemAdapter) {
-            setData(listData)
+            setData(listData ?: listOf())
         }
     }
 }

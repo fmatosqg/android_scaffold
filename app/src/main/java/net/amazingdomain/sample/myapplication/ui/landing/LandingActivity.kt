@@ -18,11 +18,10 @@ class LandingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        binding.lifecycleOwner = this
-
-        binding.viewModel = viewModel
+        DataBindingUtil
+                .setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+                .also { it.lifecycleOwner = this }
+                .also { it.viewModel = viewModel }
 
         setSupportActionBar(toolbar)
 
@@ -38,8 +37,9 @@ class LandingActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
 
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = ListItemAdapter()
+        recycler_view
+                .also { it.layoutManager = LinearLayoutManager(this) }
+                .also { it.adapter = ListItemAdapter() }
     }
 
 

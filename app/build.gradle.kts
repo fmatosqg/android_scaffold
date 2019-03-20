@@ -1,4 +1,3 @@
-import com.android.build.gradle.internal.dsl.SigningConfig
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
 plugins {
@@ -11,6 +10,11 @@ plugins {
 
 android {
 
+    //https://twitter.com/PeterGKeefe/status/1108092094348967942
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 
     dataBinding.isEnabled = true
 
@@ -111,6 +115,7 @@ dependencies {
 
     // other
     implementation("com.squareup.picasso:picasso:2.71828")
+    implementation("com.jakewharton.timber:timber:4.7.1")
 
     ////////////////////////////////////////////////////
     // test

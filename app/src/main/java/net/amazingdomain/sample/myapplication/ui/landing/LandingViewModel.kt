@@ -1,7 +1,6 @@
 package net.amazingdomain.sample.myapplication.ui.landing
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.annotation.UiThread
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,15 +9,14 @@ import io.reactivex.schedulers.Schedulers
 import net.amazingdomain.sample.myapplication.domain.landing.DataRepository
 import net.amazingdomain.sample.myapplication.ui.landing.model.AlbumUiModel
 import net.amazingdomain.sample.myapplication.ui.landing.model.convertToUiModel
+import timber.log.Timber
 
 class LandingViewModel(private val dataRepository: DataRepository) : ViewModel() {
 
     val isRefreshing = MutableLiveData<Boolean>()
     val listData = MutableLiveData<List<AlbumUiModel>>()
 
-
     @SuppressLint("CheckResult")
-    @UiThread
     fun fetchData() {
 
         isRefreshing.postValue(true)
@@ -31,7 +29,7 @@ class LandingViewModel(private val dataRepository: DataRepository) : ViewModel()
                 .toList()
                 .subscribeBy(
                         onError = {
-                            Log.w("LandingViewModel", it)
+                            Timber.w(it)
                             isRefreshing.postValue(false)
                         },
                         onSuccess = {
@@ -39,7 +37,6 @@ class LandingViewModel(private val dataRepository: DataRepository) : ViewModel()
                             listData.postValue(it)
                         }
                 )
-
     }
 
 }
