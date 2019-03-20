@@ -25,7 +25,6 @@ class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private fun setImage(imageUrl: String, @DrawableRes placeholderRes: Int, imageView: ImageView) {
         try {
-
             Picasso
                     .get()
                     .load(imageUrl)
