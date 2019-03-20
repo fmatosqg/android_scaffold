@@ -35,6 +35,7 @@
                 app:fastScrollVerticalThumbDrawable="@drawable/recycler_fast_scroll_thumb_drawable"
                 app:fastScrollVerticalTrackDrawable="@drawable/recycler_fast_scroll_line_drawable"
                 app:listData="@{viewModel.listData}"
+                tools:itemCount="4"
                 tools:listitem="@layout/list_item" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -25,7 +25,8 @@ class MyApplication : Application() {
                 logger = logger)
 
         if (BuildConfig.DEBUG) {
-            configureStrictMode()
+            android.os.Handler()
+                    .post { configureStrictMode() }
         }
     }
 
@@ -33,7 +34,7 @@ class MyApplication : Application() {
 
 
         var threadPolicyBuilder = StrictMode.ThreadPolicy.Builder()
-                .detectDiskReads()
+//                .detectDiskReads() // too much unnecessary noise from libs
                 .detectDiskWrites()
                 .detectNetwork()
                 .detectAll()

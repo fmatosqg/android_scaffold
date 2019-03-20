@@ -109,6 +109,8 @@ dependencies {
     implementation("io.reactivex.rxjava2:rxandroid:$rxAndroidVersion")
     implementation("io.reactivex.rxjava2:rxkotlin:2.3.0")
 
+    // other
+    implementation("com.squareup.picasso:picasso:2.71828")
 
     ////////////////////////////////////////////////////
     // test

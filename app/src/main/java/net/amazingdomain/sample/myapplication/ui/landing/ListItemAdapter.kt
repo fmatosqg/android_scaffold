@@ -1,16 +1,14 @@
 package net.amazingdomain.sample.myapplication.ui.landing
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.annotation.UiThread
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.ui.landing.model.AlbumUiModel
 
-class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
+class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
 
     private var listData: List<AlbumUiModel>
 
@@ -53,16 +51,6 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder>() {
     }
 
 
-    class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        private val kittyName: TextView = itemView.findViewById(R.id.kitty_name)
-
-        fun setData(album: AlbumUiModel?) {
-
-            kittyName.text = album?.niceName
-
-        }
-    }
 }
 
 /**

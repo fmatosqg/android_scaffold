@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 class DataRepository(private val apiService: ApiService) : IDataRepository {
 
-    private var size = 5
+    private var size = 4
 
     @AnyThread
     override fun fetchData(): Single<List<Album>> {
@@ -19,6 +19,9 @@ class DataRepository(private val apiService: ApiService) : IDataRepository {
             list += Album(niceName = "Kitty #$i",
                     thumbnail = "https://66.media.tumblr.com/5b29224d7cc879593a56b6ee23176882/tumblr_pol0kdxufk1qd9qa2o1_500.png")
         }
+
+        list += Album(niceName = "Kitty #$size",
+                thumbnail = "")
 
         size++
 

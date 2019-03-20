@@ -1,5 +1,14 @@
 <resources>
+
+    <!--application wide-->
     <string name="app_name">My Application</string>
+
+    <!--=================================================================-->
+
+    <!--landing recyclerview items-->
+    <string name="sample_header">Hello Header</string>
+    <string name="sample_caption">Hello Caption</string>
+    <string name="sample_caption_bold">Hello Caption Bold</string>
 
 
 </resources>
