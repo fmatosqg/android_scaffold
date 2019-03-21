@@ -13,10 +13,13 @@ import timber.log.Timber
 
 class LandingViewModel(val dataRepository: DataRepository) : ViewModel() {
 
+    val heroUrl = MutableLiveData<String>()
+
     val isRefreshing = MutableLiveData<Boolean>()
     val isPlaceholderVisible = MutableLiveData<Int>() // View.GONE or View.VISIBLE
     val isRecyclerViewVisible = MutableLiveData<Int>() // View.GONE or View.VISIBLE
     val listData = MutableLiveData<List<AlbumUiModel>>()
+
 
     init {
         setChildrenVisibility(true)
@@ -43,6 +46,10 @@ class LandingViewModel(val dataRepository: DataRepository) : ViewModel() {
                         onSuccess = {
                             isRefreshing.postValue(false)
                             listData.postValue(it)
+
+                            if ( !it.isEmpty() ) {
+                                heroUrl.postValue(it[0].thumbnailUrl)
+                            }
                             setChildrenVisibility(isPlaceholderVisible = it.isEmpty())
                         }
                 )
