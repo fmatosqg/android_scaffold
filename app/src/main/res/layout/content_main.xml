@@ -18,10 +18,9 @@
         android:layout_height="0dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_image"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_extra"
         tools:layout_height="match_parent"
         tools:layout_width="match_parent">
 
@@ -29,6 +28,8 @@
             android:id="@+id/swipe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_small"
             app:refreshing="@{viewModel.isRefreshing}">
 
             <androidx.recyclerview.widget.RecyclerView
