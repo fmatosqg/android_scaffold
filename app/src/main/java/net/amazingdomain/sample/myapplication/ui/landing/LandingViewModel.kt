@@ -11,7 +11,7 @@ import net.amazingdomain.sample.myapplication.ui.landing.model.AlbumUiModel
 import net.amazingdomain.sample.myapplication.ui.landing.model.convertToUiModel
 import timber.log.Timber
 
-class LandingViewModel(private val dataRepository: DataRepository) : ViewModel() {
+class LandingViewModel(val dataRepository: DataRepository) : ViewModel() {
 
     val isRefreshing = MutableLiveData<Boolean>()
     val isPlaceholderVisible = MutableLiveData<Int>() // View.GONE or View.VISIBLE
@@ -20,6 +20,7 @@ class LandingViewModel(private val dataRepository: DataRepository) : ViewModel()
 
     init {
         setChildrenVisibility(true)
+        fetchData()
     }
 
     @SuppressLint("CheckResult")

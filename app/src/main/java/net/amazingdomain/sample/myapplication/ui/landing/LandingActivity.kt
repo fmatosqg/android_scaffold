@@ -8,12 +8,12 @@ import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.landing_toolbar.*
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.databinding.ActivityMainBinding
-import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class LandingActivity : AppCompatActivity() {
 
-    private val viewModel: LandingViewModel by inject()
+    private val viewModel by viewModel<LandingViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,6 @@ class LandingActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        viewModel.fetchData()
 
         swipe.setOnRefreshListener {
             viewModel.fetchData()
@@ -42,6 +41,4 @@ class LandingActivity : AppCompatActivity() {
                 .also { it.adapter = ListItemAdapter() }
     }
 
-
 }
-
