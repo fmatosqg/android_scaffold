@@ -5,7 +5,8 @@ import android.view.ViewGroup
 import androidx.annotation.UiThread
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import net.amazingdomain.sample.myapplication.R
+
+import net.amazingdomain.sample.myapplication.databinding.ListItemBinding
 import net.amazingdomain.sample.myapplication.ui.landing.model.AlbumUiModel
 
 class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
@@ -20,7 +21,7 @@ class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
         return LayoutInflater.from(parent.context)
-                .inflate(R.layout.list_item, parent, false)
+                .let { ListItemBinding.inflate(it, parent, false) }
                 .let { ItemViewHolder(it) }
 
     }
@@ -32,7 +33,7 @@ class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         listData
-                .let { listData[position] }
+                .let {  listData[position] }
                 .let { holder.setData(it) }
 
     }
@@ -47,11 +48,13 @@ class ListItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
 
 }
 
+
+
 /**
  * Referenced as "app:listData" in layout;
  * Called through the data binding generated code.
  */
-@BindingAdapter("listData")
+@BindingAdapter("albumList")
 fun setRecyclerViewProperties(recyclerView: RecyclerView?, listData: List<AlbumUiModel>?) {
 
     // note that we need to accept an empty listData because of an interesting quirk in live data
@@ -62,3 +65,4 @@ fun setRecyclerViewProperties(recyclerView: RecyclerView?, listData: List<AlbumU
         }
     }
 }
+

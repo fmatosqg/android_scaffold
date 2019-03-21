@@ -17,19 +17,23 @@ Running UI tests with only the mock flavor will ensure consistent. Plus, you don
 Environment variables such as server url are configured through `buildSrc/src/main/kotlin/Environment.kt`
 
 ## Java packages convention
-- This app is packaged by feature. What it means is that if it has a feature called login and another called list the following tree is expected:
+- This app is packaged by feature. What it means is that if it has a feature called login and another called landing the following tree is expected:
 
 ```
 ui
  | 
  \ login
- \ list
+ \ landing
+ \ common
 domain
  |
  \ login
- \ list 
+ \ landing
+ \ common 
 utils 
 ```
+
+ui.common is a place for generic code shared among different feature 
 
 Which is an advantage once the app has over 20 activities and presenters.
 

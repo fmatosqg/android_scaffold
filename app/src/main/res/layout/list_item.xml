@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/padding_normal"
-    android:orientation="horizontal">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/img_avatar"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="@dimen/padding_small"
-        android:scaleType="centerCrop"
-        tools:src="@tools:sample/backgrounds/scenic" />
+    <data>
+
+        <variable
+            name="album"
+            type="net.amazingdomain.sample.myapplication.ui.landing.model.AlbumUiModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="@dimen/padding_normal"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/padding_small"
+            app:imageUrl="@{album.thumbnailUrl}"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/backgrounds/scenic" />
 
-        <TextView
-            style="@style/AppTheme.Text.Header"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/sample_header"
-            tools:text="Hello superlong header with ellipsis" />
-
-        <TextView
-            android:id="@+id/txt_name"
-            style="@style/AppTheme.Text.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            tools:text="Hello item superlong with ellipsis " />
+            android:orientation="vertical">
 
 
-        <TextView
-            style="@style/AppTheme.Text.Caption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/sample_caption" />
+            <TextView
+                style="@style/AppTheme.Text.Header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/sample_header"
+                tools:text="Hello superlong header with ellipsis" />
+
+            <TextView
+                style="@style/AppTheme.Text.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{album.niceName}"
+                tools:text="Hello item superlong with ellipsis " />
 
 
-        <TextView
-            style="@style/AppTheme.Text.Caption.Bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/sample_caption_bold" />
+            <TextView
+                style="@style/AppTheme.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/sample_caption" />
+
+
+            <TextView
+                style="@style/AppTheme.Text.Caption.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/sample_caption_bold" />
+        </LinearLayout>
+
     </LinearLayout>
 
-</LinearLayout>
+</layout>

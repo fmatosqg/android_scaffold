@@ -24,7 +24,7 @@ class DataRepository(private val apiService: ApiService) : IDataRepository {
 
 
         // this item will stress picasso with an empty url
-        list += Album(niceName = "Kitty #$size",
+        list += Album(niceName = "Intentionally broken row",
                 thumbnail = "")
 
         size++
