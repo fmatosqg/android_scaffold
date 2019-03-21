@@ -47,7 +47,7 @@ class LandingActivityTest : BaseActivityTest() {
         onView(withId(R.id.recycler_view)).check(RecyclerViewItemCountAssertion(5))
 
         assertPosition(0)
-        assertPosition(4)
+        assertPosition(3)
 
     }
 
