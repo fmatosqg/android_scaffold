@@ -13,10 +13,18 @@
 
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:id="@+id/aaaa"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_image"
+        tools:layout_height="match_parent"
+        tools:layout_width="match_parent">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe"
@@ -30,12 +38,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="@{viewModel.isRecyclerViewVisible}"
+                app:albumList="@{viewModel.listData}"
                 app:fastScrollEnabled="true"
                 app:fastScrollHorizontalThumbDrawable="@drawable/recycler_fast_scroll_thumb_drawable"
                 app:fastScrollHorizontalTrackDrawable="@drawable/recycler_fast_scroll_line_drawable"
                 app:fastScrollVerticalThumbDrawable="@drawable/recycler_fast_scroll_thumb_drawable"
                 app:fastScrollVerticalTrackDrawable="@drawable/recycler_fast_scroll_line_drawable"
-                app:albumList="@{viewModel.listData}"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 tools:itemCount="4"
                 tools:listitem="@layout/list_item" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

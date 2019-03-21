@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.landing_toolbar.*
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,9 +24,6 @@ class LandingActivity : AppCompatActivity() {
                 .setContentView<ActivityMainBinding>(this, R.layout.activity_main)
                 .also { it.lifecycleOwner = this }
                 .also { it.viewModel = viewModel }
-
-        setSupportActionBar(toolbar)
-
 
         swipe.setOnRefreshListener {
             viewModel.fetchData()
