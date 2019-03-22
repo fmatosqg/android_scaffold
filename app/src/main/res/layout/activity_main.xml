@@ -75,12 +75,12 @@
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <net.amazingdomain.sample.myapplication.ui.common.component.GlowingButton
+                    android:id="@+id/btn_glow"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
 
-                    android:text="hello again " />
-
+                    android:padding="@dimen/padding_normal" />
             </LinearLayout>
 
         </FrameLayout>

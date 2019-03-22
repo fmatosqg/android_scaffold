@@ -1,12 +1,20 @@
 package net.amazingdomain.sample.myapplication.ui.landing
 
+import android.animation.ObjectAnimator
+import android.animation.TimeInterpolator
+import android.animation.ValueAnimator
+import android.animation.ValueAnimator.INFINITE
+import android.animation.ValueAnimator.REVERSE
 import android.content.res.Configuration
 import android.os.Bundle
+import android.view.animation.BounceInterpolator
+import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import net.amazingdomain.sample.myapplication.R
 import net.amazingdomain.sample.myapplication.databinding.ActivityMainBinding
@@ -33,6 +41,12 @@ class LandingActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        btn_glow.animate()
+
+    }
 
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
