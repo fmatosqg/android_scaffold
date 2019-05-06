@@ -29,16 +29,24 @@ class KoinModules {
         return listOf(uiModule, domainModule, networkModule)
     }
 
-
+    /**
+     * Creates all injected objects necessary for activities, fragments and custom views
+     */
     private val uiModule = module {
         viewModel { LandingViewModel(get()) }
     }
 
+    /**
+     * Creates all injected objects necessary for domain layer
+     */
     private val domainModule = module {
 
         factory { DataRepository(get()) }
     }
 
+    /**
+     * Creates all injected objects necessary for network layer
+     */
     private val networkModule = module {
 
         factory { Gson() }
